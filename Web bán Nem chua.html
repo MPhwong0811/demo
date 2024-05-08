@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://127.0.0.1:5500/baitaplon.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title>Web bán Nem chua</title>
+        <style>
+            body{
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            header{
+                background-color: #e5d5d5;
+                color: white;
+                padding: 20px;
+                text-align: center;
+            }
+            #search{
+                margin-top: 10px;
+            }
+            #product-list{
+                margin: 30px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            #shopping-cart{
+                margin: 30px;
+                float:inline-start;
+            }
+            .product{
+                border: 1px solid #ddabab;
+                padding: 10px;
+                margin-bottom: 30px;
+                background-color: #e5d5d5;
+                width: 17%;
+            }
+            button {
+                background-color: #4CAF50;
+                color: white;
+                padding: 5px 10px;
+                border: none;
+                cursor: pointer;
+            }
+            button:hover {
+                background-color: #4CAF50;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>NEM CHUA THANH HÓA</h1>
+            <div id="search">
+                <input type="text" placeholder="Sản phẩm cần tìm" oninput="search()">
+                <button onclick="search()">Tìm</button>
+            </div>
+        </header>
+        <h2>Danh sách các sản phẩm tại cửa hàng</h2>
+        <section id="product-list">
+            <div class="product">
+                <h3>Nem chua loại 1</h3>
+                <img src="./Web bán Nem chua_files/nem-thanh-hoa.jpg" alt="ảnh nem chua loại 1" width="110px" height="100px">
+                <p>Giá sản phấm: 35.000 VNĐ</p>
+                <label for="quantity"> Số lượng:</label>
+                <input type="number" id="quantity" value="0" min="10" step="10">
+                <button onclick="addToCart(&#39;Nem chua loại 1&#39;,35000)">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product">
+                <h3>Nem chua loại 2</h3>
+                <img src="./Web bán Nem chua_files/nem-chua-1_1628326267.jpg" alt="ảnh nem chua loại 2" width="110px" height="100px">
+                <p>Giá sản phấm: 28.000 VNĐ</p>
+                <label for="quantity"> Số lượng:</label>
+                <input type="number" id="quantity" value="0" min="10" step="10">
+                <button onclick="addToCart(&#39;Nem chua loại 2&#39;,28000)">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product">
+                <h3>Nem chua rán</h3>
+                <img src="./Web bán Nem chua_files/lam-nem-chua-ran-chien-xu-chuan-vi-ha-noi-tai-nha-202003230644238881.jpg" alt="ảnh nem chua rán" width="110px" height="100px">
+                <p>Giá sản phấm: 30.000 VNĐ</p>
+                <label for="quantity"> Số lượng:</label>
+                <input type="number" id="quantity-Nemran" value="0" min="5" step="5">
+                <button onclick="addToCart(&#39;Nem chua rán&#39;,30000)">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product">
+                <h3>Nem thính</h3>
+                <img src="./Web bán Nem chua_files/z4432100353935-8d53e3d4286f110818ecbfe81c4c7345.jpg" alt="ảnh nem thính" width="110px" height="100px">
+                <p>Giá sản phấm: 50.000 VNĐ</p>
+                <label for="quantity"> Số lượng:</label>
+                <input type="number" id="quantity-Nemthinh" value="0" min="1" step="1">
+                <button onclick="addToCart(&#39;Nem thính&#39;,50000)">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product">
+                <h3>Tré trộn</h3>
+                <img src="./Web bán Nem chua_files/mon-ngon-moi-ngay-bat-mi-cong-thuc-lam-tre-tron-gay-sot-mang-xa-hoi-nhung-ngay-qua7.jpg" alt="ảnh tré trộn" width="110px" height="100px">
+                <p>Giá sản phấm: 40.000 VNĐ</p>
+                <label for="quantity"> Số lượng:</label>
+                <input type="number" id="quantity-Tretron" value="0" min="1" step="1">
+                <button onclick="addToCart(&#39;Tré trộn&#39;,40000)">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product">
+                <h3>Nem nắm</h3>
+                <img src="./Web bán Nem chua_files/dac-san-o-nam-dinh-chi-nhung-nuoc-soi-mot-lan-ben-trong-van-con-do-nhung-an-vao-ngot-ngon-759483497042973862.jpg" alt="ảnh nem nắm" width="110px" height="100px">
+                <p>Giá sản phấm: 40.000 VNĐ</p>
+                <label for="quantity"> Số lượng:</label>
+                <input type="number" id="quantity-Nemnam" value="0" min="1" step="1">
+                <button onclick="addToCart(&#39;Nem nắm&#39;,40000)">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product">
+                <h3>Nem chua chay</h3>
+                <img src="./Web bán Nem chua_files/img-social-uploadbtv-mxh-1694146632-383-width1200height628-1694146632-320-width1200height628-watermark.jpg" alt="ảnh nem chua chay" width="110px" height="100px">
+                <p>Giá sản phấm: 30.000 VNĐ</p>
+                <label for="quantity"> Số lượng:</label>
+                <input type="number" id="quantity-Nemchuacay" value="0" min="10" step="10">
+                <button onclick="addToCart(&#39;Nem chua chay&#39;,30000)">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product">
+                <h3>Nem nướng chua ngọt</h3>
+                <img src="./Web bán Nem chua_files/nem-chua-nuong-chua-ngot00221.jpg" alt="ảnh nem nướng chua ngọt" width="110px" height="100px">
+                <p>Giá sản phấm: 35.000 VNĐ</p>
+                <label for="quantity"> Số lượng:</label>
+                <input type="number" id="quantity-Nemnuong" value="0" min="5" step="5">
+                <button onclick="addToCart(&#39;Nem nướng chua ngọt&#39;,35000)">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product">
+                <h3>Nem chua trộn cóc non</h3>
+                <img src="./Web bán Nem chua_files/cach-lam-nem-cha-tron-coc-non-trung-cut-da-chien-tai-nha-202108091521195759.jpg" alt="ảnh nem chua loại 1" width="110px" height="100px">
+                <p>Giá sản phấm: 35.000 VNĐ</p>
+                <label for="quantity"> Số lượng:</label>
+                <input type="number" id="quantity-Nemchuatron" value="0" min="10" step="10">
+                <button onclick="addToCart(&#39;Nem chua trộn cóc non&#39;,35000)">Thêm vào giỏ hàng</button>
+            </div>
+            <div class="product">
+                <h3>Nắm nêm</h3>
+                <img src="./Web bán Nem chua_files/mam-nem-1_1628402194.jpg" alt="ảnh nem nướng chua ngọt" width="110px" height="100px">
+                <p>Giá sản phấm: 40.000 VNĐ</p>
+                <label for="quantity"> Số lượng:</label>
+                <input type="number" id="quantity-Mamnem" value="0" min="5" step="5">
+                <button onclick="addToCart(&#39;Mắm nêm&#39;,40000)">Thêm vào giỏ hàng</button>
+            </div>
+        </section>
+        <section id="shopping-cart">
+            <h2>Giỏ hàng của bạn</h2>
+            <ul id="cart-items"></ul>
+            <p id="total">Tổng tiền:0 VNĐ</p>
+        </section>
+        <script>
+            let cartItems = [];    
+            window.onload = function () {
+                displayProducts(products);
+            };
+            function search(){
+                 let searchTerm = document.querySelector('#search input').value.toLowerCase();
+                 let filteredProducts = products.filter(product => product.name.toLowerCase().includes(searchTerm));
+                 displayProducts(filteredProducts);
+            }
+            function addToCart(productName, price) {
+                 let quantityElement=document.getElementById('quantity-${productName}')
+                 let quantity = parseInt(document.getElementById('quantity').value);
+                 let total = quantity * price;
+                 cartItems.push({ productName, quantity, total });
+                 displayCart()
+            }
+            function displayCart(){
+                 let cartList = document.getElementById('cart-items');
+                 cartList.innerHTML = '';
+                 let total = 0;
+                 for (let item of cartItems) {
+                     total += item.total;
+                     let listItem = document.createElement('li');
+                     listItem.textContent = `${item.quantity} x ${item.productName} - ₫${formatCurrency(item.total)}`;
+                     cartList.appendChild(listItem);
+                }
+                 document.getElementById('total').textContent = `Tổng tiền: ₫${formatCurrency(total)}`;
+            }
+            function formatCurrency(amount) {
+                 return new Intl.NumberFormat('vi-VN', { style: 'currency', currency: 'VND' }).format(amount);
+            }
+        </script>
+    <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+</body></html>
